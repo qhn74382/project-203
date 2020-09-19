@@ -28,7 +28,8 @@ Session - 3
     - MySQL
 
 
-Note:
+- Resources
+
 EC2 Instance Connect
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html#ec2-instance-connect-install-eic-CLI
 
