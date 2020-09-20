@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   database:
     image: mysql:5.7
@@ -14,23 +15,28 @@ services:
     configs:
       - source: initialdb
         target: /docker-entrypoint-initdb.d/init.sql
+
   app-server:
     image: "${ECR_REGISTRY}/${APP_REPO_NAME}:latest"
     deploy:
-      mode: global
-      update_config:
-        parallelism: 2
-        delay: 5s
-        order: start-first
+        mode: global
+        update_config:
+          parallelism: 2
+          delay: 5s
+          order: start-first
     ports:
       - "80:80"
     networks:
       - clarusnet
+
 networks:
   clarusnet:
     driver: overlay
+
 volumes:
-  db-data:
+    db-data:
+
 configs:
   initialdb:
     file: ./init.sql
+

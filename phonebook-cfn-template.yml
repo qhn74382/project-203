@@ -197,13 +197,13 @@ Resources:
             ECR_REGISTRY=${ECR_REGISTRY}
             APP_REPO_NAME=${APP_REPO_NAME}
             EOF
-            curl -o "docker-compose.yml" -L ${GIT_FILE_URL}"docker-compose.yml"
-            curl -o "init.sql" -L ${GIT_FILE_URL}"init.sql"
+            curl -o "docker-compose.yml" -L ${GIT_FILE_URL}docker-compose.yml
+            curl -o "init.sql" -L ${GIT_FILE_URL}init.sql
             docker-compose config | docker stack deploy --with-registry-auth -c - phonebook
           - ECR_REGISTRY: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com
             APP_REPO_NAME: clarusway-repo/phonebook-app
-            GITHUB_REPO: https://github.com/qhn74382/project-203.git
-            GIT_FILE_URL: https://raw.githubusercontent.com/qhn74382/project-203/master/docker-compose.yml
+            GITHUB_REPO: https://github.com/callahan-cw/project-203.git
+            GIT_FILE_URL: https://raw.githubusercontent.com/callahan-cw/project-203/master/
 
   DockerManager2:
     Type: "AWS::EC2::Instance"
@@ -247,7 +247,7 @@ Resources:
   DockerWorker2:
     Type: "AWS::EC2::Instance"
     DependsOn:
-      - DockerWorker2
+      - DockerWorker1
     Properties:
       LaunchTemplate:
         LaunchTemplateId: !Ref WorkersLT
