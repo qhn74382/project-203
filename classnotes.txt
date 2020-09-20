@@ -7,7 +7,7 @@ Instructor: Callahan
 
 Session - 3
 
-- Infrastructure
+- Infrastructure (AWS Cloudformation, Terraform)
 
     - Public Repository on GitHub (Codebass)
         - git clone https://github.com/qhn74382/project-203.git
@@ -22,10 +22,12 @@ Session - 3
         - talk to ECR (AWS CLI, ECR Credential Helper, IAM Roles)
     - Image Repository (AWS ECR)
 
-- Application Deployment
+- Application Deployment (AWS Cloudformation, Jenkins, Ansible)
 
-    - Python Flask
-    - MySQL
+    - Creating Dockerfile Python Flask Application
+    - Creating Docker-Compose File
+        - Service MySQL
+        - Service for App
 
 
 - Resources
@@ -38,4 +40,7 @@ https://docs.docker.com/engine/swarm/swarm-tutorial/
 
 ECR Credential Helper
 https://github.com/awslabs/amazon-ecr-credential-helper
+
+Docker-Compose Service Configuration Reference
+https://docs.docker.com/compose/compose-file/
 
