@@ -202,8 +202,8 @@ Resources:
             docker-compose config | docker stack deploy --with-registry-auth -c - phonebook
           - ECR_REGISTRY: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com
             APP_REPO_NAME: clarusway-repo/phonebook-app
-            GITHUB_REPO: https://github.com/callahan-cw/project-203.git
-            GIT_FILE_URL: https://raw.githubusercontent.com/callahan-cw/project-203/master/
+            GITHUB_REPO: https://github.com/qhn74382/project-203.git
+            GIT_FILE_URL: https://raw.githubusercontent.com/qhn74382/project-203/master/
 
   DockerManager2:
     Type: "AWS::EC2::Instance"
